@@ -1,5 +1,0 @@
-load("GEOSpyD")
-load("GEOSenv")
-load("ifort")
-load("openmpi")
-load("Baselibs/7")
