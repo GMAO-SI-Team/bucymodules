@@ -1,15 +1,15 @@
---[[ lmod for gcc 13.2.0
+--[[ lmod for gcc 14.1.0
 
  Installed as:
 
-   wget https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz
-   tar -xf wget gcc-13.2.0.tar.xz
+   wget https://ftp.gnu.org/gnu/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz
+   tar -xf wget gcc-14.1.0.tar.xz
 
-   cd gcc-13.2.0
+   cd gcc-14.1.0
    ./contrib/download_prerequisites
 
-   mkdir build-gcc-13.2.0 && cd build-gcc-13.2.0
-   ../configure --prefix=/ford1/share/gmao_SIteam/gcc/gcc-13.2.0 \
+   mkdir build-gcc-14.1.0 && cd build-gcc-14.1.0
+   ../configure --prefix=/ford1/share/gmao_SIteam/gcc/gcc-14.1.0 \
           --enable-languages=c,c++,fortran --disable-multilib |& tee configure.log
 
    make -j 6 |& tee make.log
@@ -20,14 +20,14 @@
 family("Compiler")
 
 local compilername = "gcc"
-local version = "13.2.0"
+local version = "14.1.0"
 local versioned_compiler = compilername .. "-" .. version
 local siteamdir = "/ford1/share/gmao_SIteam"
 local installdir = pathJoin(siteamdir,compilername,versioned_compiler)
 
 -- Setup Modulepath for packages built by this compiler
 local mroot = "/ford1/share/gmao_SIteam/lmodulefiles"
-local mdir  = pathJoin(mroot,"Compiler/gcc-13.2.0")
+local mdir  = pathJoin(mroot,"Compiler/gcc-14.1.0")
 prepend_path("MODULEPATH", mdir)
 
 prepend_path("PATH",pathJoin(installdir,"bin"))
