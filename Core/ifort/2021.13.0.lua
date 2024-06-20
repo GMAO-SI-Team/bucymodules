@@ -1,8 +1,8 @@
---[[ stub routine for ifx 2024.1
+--[[ stub routine for ifort 2021.13
 
-  This was installed using the l_BaseKit_p_2024.1.0.596_offline.sh installer.
+  This was installed using the l_BaseKit_p_2024.2.0.634_offline.sh installer.
  
-  After running `bash l_BaseKit_p_2024.1.0.596_offline.sh` the GUI came up and
+  After running `bash l_BaseKit_p_2024.2.0.634_offline.sh` the GUI came up and
   a custom install was selected. In that I changed the install directory to:
  
     /ford1/share/gmao_SIteam/intel/oneapi
@@ -17,7 +17,7 @@
     Intel Integrated Performance Primitives
     Intel oneAPI Math Kernel Library
  
-  I then installed the l_HPCKit_p_2024.1.0.560_offline.sh installer. With
+  I then installed the l_HPCKit_p_2024.2.0.635_offline.sh installer. With
   that I again updated the install directory to the same as above:
 
     /ford1/share/gmao_SIteam/intel/oneapi
@@ -32,27 +32,27 @@
 
 family("Compiler")
 
-local compilername = "ifx"
-local version = "2024.1"
+local compilername = "ifort"
+local version = "2024.2"
 local oneapidir = "/ford1/share/gmao_SIteam/intel/oneapi"
 local compilerdir = pathJoin(oneapidir,"compiler",version)
 local mkldir = pathJoin(oneapidir,"mkl",version)
 
 -- Setup Modulepath for packages built by this compiler
 local mroot = "/ford1/share/gmao_SIteam/lmodulefiles"
-local mdir  = pathJoin(mroot,"Compiler/ifx-2024.1")
+local mdir  = pathJoin(mroot,"Compiler/ifort-2021.13.0")
 prepend_path("MODULEPATH", mdir)
 
 setenv("CC",pathJoin(compilerdir,"bin","icx"))
 setenv("CCC",pathJoin(compilerdir,"bin","icpx"))
 setenv("CXX",pathJoin(compilerdir,"bin","icpx"))
-setenv("FC",pathJoin(compilerdir,"bin","ifx"))
-setenv("F90",pathJoin(compilerdir,"bin","ifx"))
-setenv("F77",pathJoin(compilerdir,"bin","ifx"))
+setenv("FC",pathJoin(compilerdir,"bin","ifort"))
+setenv("F90",pathJoin(compilerdir,"bin","ifort"))
+setenv("F77",pathJoin(compilerdir,"bin","ifort"))
 
 setenv("I_MPI_CC",pathJoin(compilerdir,"bin","icx"))
 setenv("I_MPI_CXX",pathJoin(compilerdir,"bin","icpx"))
-setenv("I_MPI_F90",pathJoin(compilerdir,"bin","ifx"))
+setenv("I_MPI_F90",pathJoin(compilerdir,"bin","ifort"))
 
 -- We also need a backing gcc compiler
 local gccdir = '/ford1/local/gcc/gcc-12.1.0'
@@ -60,7 +60,7 @@ prepend_path("PATH",pathJoin(gccdir,"bin"))
 prepend_path("LD_LIBRARY_PATH",pathJoin(gccdir,"lib64"))
 prepend_path("CPATH",pathJoin(gccdir,"include"))
 
--- ifx specific
+-- ifort specific
 
 prepend_path("PATH",pathJoin(compilerdir,"bin"))
 prepend_path("LD_LIBRARY_PATH",pathJoin(compilerdir,"lib"))

@@ -6,7 +6,7 @@ This was cloned with:
 
 This was built using:
 
-  ml ifort/2021.6.0 intelmpi/2021.6.0
+  ml ifort/2021.6.0 intelmpi/2021.6.0 GEOSpyD/Min23.5.2-0_py3.11
 
   make -j6 install ESMF_COMM=intelmpi CONFIG_SETUP='ifort_2022.1.0-intelmpi_2022.1.0' |& tee makeinstall.ifort_2022.1.0-intelmpi_2022.1.0.log
 

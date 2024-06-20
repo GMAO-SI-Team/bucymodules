@@ -2,22 +2,22 @@
 
 This was cloned with:
 
-  git clone -j 4 --recurse-submodules -b v7.23.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-7.23.0/src
+  git clone -j 4 --recurse-submodules -b v8.0.2 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.0.2/src
 
 This was built using:
 
-  ml ifort/2021.12.0 intelmpi/2021.12 GEOSpyD/Min23.5.2-0_py3.11
+  ml ifort/2021.6.0 intelmpi/2021.6.0 GEOSpyD/Min23.5.2-0_py3.11
 
-  make -j6 install ESMF_COMM=intelmpi CONFIG_SETUP='ifort_2021.12.0-intelmpi_2021.12' |& tee makeinstall.ifort_2021.12.0-intelmpi_2021.12.log
+  make -j6 install ESMF_COMM=intelmpi CONFIG_SETUP='ifort_2022.1.0-intelmpi_2022.1.0' |& tee makeinstall.ifort_2022.1.0-intelmpi_2022.1.0.log
 
 --]]
 
 family("Baselibs")
 
-local compilername = "ifort-2021.12.0"
-local mpiname = "intelmpi-2021.12"
+local compilername = "ifort-2021.6.0"
+local mpiname = "intelmpi-2021.6.0"
 
-local configsetup = "ifort_2021.12.0-intelmpi_2021.12"
+local configsetup = "ifort_2022.1.0-intelmpi_2022.1.0"
 
 local version = myModuleVersion()
 local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ESMA-Baselibs-" .. version

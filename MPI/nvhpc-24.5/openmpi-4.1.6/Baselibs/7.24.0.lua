@@ -2,22 +2,26 @@
 
 This was cloned with:
 
-  git clone -j 4 --recurse-submodules -b v7.23.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-7.23.0/src
+  git clone -j 4 --recurse-submodules -b v7.24.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-7.24.0/src
+
+  NOTE: I also updated pFlogger to v1.15.0
 
 This was built using:
 
-  ml ifort/2021.12.0 intelmpi/2021.12 GEOSpyD/Min23.5.2-0_py3.11
+  ml nvhpc/24.5 openmpi/4.1.6 GEOSpyD/Min23.5.2-0_py3.11
 
-  make -j6 install ESMF_COMM=intelmpi CONFIG_SETUP='ifort_2021.12.0-intelmpi_2021.12' |& tee makeinstall.ifort_2021.12.0-intelmpi_2021.12.log
+  make -j6 install ESMF_COMM=openmpi CONFIG_SETUP='nvfortran_24.5-openmpi_4.1.6' SYSTEM_ZLIB=YES |& tee makeinstall.nvfortran_24.5-openmpi_4.1.6.log
+
+NOTE: The SYSTEM_ZLIB above is because of a weird NVHPC issue with zlib in baselibs. It also turns off zlib support in curl
 
 --]]
 
 family("Baselibs")
 
-local compilername = "ifort-2021.12.0"
-local mpiname = "intelmpi-2021.12"
+local compilername = "nvhpc-24.5"
+local mpiname = "openmpi-4.1.6"
 
-local configsetup = "ifort_2021.12.0-intelmpi_2021.12"
+local configsetup = "nvfortran_24.5-openmpi_4.1.6"
 
 local version = myModuleVersion()
 local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ESMA-Baselibs-" .. version

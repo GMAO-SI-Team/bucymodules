@@ -33,7 +33,7 @@
 family("Compiler")
 
 local compilername = "ifort"
-local version = "2021.12.0"
+local version = "2024.1"
 local oneapidir = "/ford1/share/gmao_SIteam/intel/oneapi"
 local compilerdir = pathJoin(oneapidir,"compiler",version)
 local mkldir = pathJoin(oneapidir,"mkl",version)
@@ -53,6 +53,12 @@ setenv("F77",pathJoin(compilerdir,"bin","ifort"))
 setenv("I_MPI_CC",pathJoin(compilerdir,"bin","icx"))
 setenv("I_MPI_CXX",pathJoin(compilerdir,"bin","icpx"))
 setenv("I_MPI_F90",pathJoin(compilerdir,"bin","ifort"))
+
+-- We also need a backing gcc compiler
+local gccdir = '/ford1/local/gcc/gcc-12.1.0'
+prepend_path("PATH",pathJoin(gccdir,"bin"))
+prepend_path("LD_LIBRARY_PATH",pathJoin(gccdir,"lib64"))
+prepend_path("CPATH",pathJoin(gccdir,"include"))
 
 -- ifort specific
 

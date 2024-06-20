@@ -6,7 +6,7 @@ This was cloned with:
 
 This was built using:
 
-  ml nag/7.2.06 openmpi/4.1.6
+  ml nag/7.2.06 openmpi/4.1.6 GEOSpyD/Min23.5.2-0_py3.11
 
   make -j6 install ESMF_COMM=openmpi CONFIG_SETUP='nagfor_7.2.06-openmpi_4.1.6' |& tee makeinstall.nagfor_7.2.06-openmpi_4.1.6.log
 

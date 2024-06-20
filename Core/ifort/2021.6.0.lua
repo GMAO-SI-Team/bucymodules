@@ -22,6 +22,12 @@ setenv("FC",pathJoin(compilerdir,"bin/intel64","ifort"))
 setenv("F90",pathJoin(compilerdir,"bin/intel64","ifort"))
 setenv("F77",pathJoin(compilerdir,"bin/intel64","ifort"))
 
+-- We also need a backing gcc compiler
+local gccdir = '/ford1/local/gcc/gcc-11.2.0'
+prepend_path("PATH",pathJoin(gccdir,"bin"))
+prepend_path("LD_LIBRARY_PATH",pathJoin(gccdir,"lib64"))
+prepend_path("CPATH",pathJoin(gccdir,"include"))
+
 -- ifort specific
 
 prepend_path("PATH",pathJoin(compilerdir,"bin/intel64"))

@@ -6,7 +6,7 @@ This was cloned with:
 
 This was built using:
 
-  ml gcc/13.2.0 openmpi/5.0.2
+  ml gcc/13.2.0 openmpi/5.0.2 GEOSpyD/Min23.5.2-0_py3.11
 
   make -j6 install ESMF_COMM=openmpi CONFIG_SETUP='gfortran_13.2.0-openmpi_5.0.2' |& tee makeinstall.gfortran_13.2.0-openmpi_5.0.2.log
 

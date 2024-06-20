@@ -3,18 +3,18 @@
   This modulefile is based on the ones that comes from the NVIDIA install itself. To install, 
   I did:
  
-    wget https://developer.download.nvidia.com/hpc-sdk/24.3/nvhpc_2024_243_Linux_x86_64_cuda_12.3.tar.gz
-    tar -xf nvhpc_2024_243_Linux_x86_64_cuda_12.3.tar.gz
-    cd nvhpc_2024_243_Linux_x86_64_cuda_12.3/
+    wget https://developer.download.nvidia.com/hpc-sdk/24.5/nvhpc_2024_245_Linux_x86_64_cuda_12.4.tar.gz
+    tar -xf nvhpc_2024_245_Linux_x86_64_cuda_12.4.tar.gz
+    cd nvhpc_2024_245_Linux_x86_64_cuda_12.4/
     ./install
  
   I selected a "single system install" and then installed to:
  
     /ford1/share/gmao_SIteam/nvidia/hpc_sdk
   
-  NVHPC then creates modulesfiles. This one is the nvhpc-nompi/24.3 and was installed via
+  NVHPC then creates modulesfiles. This one is the nvhpc-nompi/24.5 and was installed via
  
-    cp /ford1/share/gmao_SIteam/nvidia/hpc_sdk/modulefiles/nvhpc-nompi/24.3 .
+    cp /ford1/share/gmao_SIteam/nvidia/hpc_sdk/modulefiles/nvhpc-nompi/24.5 .
 
   and then converted to lua
     
@@ -24,12 +24,12 @@ family("Compiler")
 
 -- Setup Modulepath for packages built by this compiler
 local mroot = "/ford1/share/gmao_SIteam/lmodulefiles"
-local mdir  = pathJoin(mroot,"Compiler/nvhpc-24.3")
+local mdir  = pathJoin(mroot,"Compiler/nvhpc-24.5")
 prepend_path("MODULEPATH", mdir)
 
 local nvhome = "/ford1/share/gmao_SIteam/nvidia/hpc_sdk"
 local target = "Linux_x86_64"
-local version = "24.3"
+local version = "24.5"
 
 local nvcudadir = pathJoin(nvhome,target,version,"cuda")
 local nvcompdir = pathJoin(nvhome,target,version,"compilers")
