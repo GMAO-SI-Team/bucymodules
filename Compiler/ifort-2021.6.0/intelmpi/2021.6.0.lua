@@ -34,6 +34,5 @@ prepend_path("FI_PROVIDER_PATH",pathJoin(pkgdir,"libfabric/lib/prov"))
 
 prepend_path("INCLUDE",pathJoin(pkgdir,"include"))
 prepend_path("CPATH",pathJoin(pkgdir,"include"))
-prepend_path("FPATH",pathJoin(pkgdir,"include"))
 
 prepend_path("MANPATH",pathJoin(pkgdir,"man"))

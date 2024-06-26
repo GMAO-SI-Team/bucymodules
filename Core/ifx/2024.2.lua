@@ -40,7 +40,7 @@ local mkldir = pathJoin(oneapidir,"mkl",version)
 
 -- Setup Modulepath for packages built by this compiler
 local mroot = "/ford1/share/gmao_SIteam/lmodulefiles"
-local mdir  = pathJoin(mroot,"Compiler/ifx-2024.1")
+local mdir  = pathJoin(mroot,"Compiler/ifx-2024.2")
 prepend_path("MODULEPATH", mdir)
 
 setenv("CC",pathJoin(compilerdir,"bin","icx"))
@@ -74,10 +74,9 @@ prepend_path("MANPATH",pathJoin(compilerdir,"share/man"))
 
 setenv("MKLROOT",mkldir)
 setenv("MKLPATH",pathJoin(mkldir,"lib/intel64"))
-prepend_path("INCLDUE",pathJoin(mkldir,"include"))
+prepend_path("INCLUDE",pathJoin(mkldir,"include"))
 prepend_path("LD_LIBRARY_PATH",pathJoin(mkldir,"lib/intel64"))
 prepend_path("LIBRARY_PATH",pathJoin(mkldir,"lib/intel64"))
 prepend_path("CPATH",pathJoin(mkldir,"include"))
-prepend_path("FPATH",pathJoin(mkldir,"include"))
 
 

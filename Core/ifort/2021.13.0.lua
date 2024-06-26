@@ -74,10 +74,9 @@ prepend_path("MANPATH",pathJoin(compilerdir,"share/man"))
 
 setenv("MKLROOT",mkldir)
 setenv("MKLPATH",pathJoin(mkldir,"lib/intel64"))
-prepend_path("INCLDUE",pathJoin(mkldir,"include"))
+prepend_path("INCLUDE",pathJoin(mkldir,"include"))
 prepend_path("LD_LIBRARY_PATH",pathJoin(mkldir,"lib/intel64"))
 prepend_path("LIBRARY_PATH",pathJoin(mkldir,"lib/intel64"))
 prepend_path("CPATH",pathJoin(mkldir,"include"))
-prepend_path("FPATH",pathJoin(mkldir,"include"))
 
 
