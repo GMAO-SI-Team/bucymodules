@@ -1,19 +1,19 @@
 --[[ lmod for gcc 14.1.0
 
- Installed as:
+Installed as:
 
-   wget https://ftp.gnu.org/gnu/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz
-   tar -xf wget gcc-14.1.0.tar.xz
+wget https://ftp.gnu.org/gnu/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz
+tar -xf gcc-14.1.0.tar.xz
 
-   cd gcc-14.1.0
-   ./contrib/download_prerequisites
+cd gcc-14.1.0
+./contrib/download_prerequisites
 
-   mkdir build-gcc-14.1.0 && cd build-gcc-14.1.0
-   ../configure --prefix=/ford1/share/gmao_SIteam/gcc/gcc-14.1.0 \
-          --enable-languages=c,c++,fortran --disable-multilib |& tee configure.log
+mkdir build-gcc-14.1.0 && cd build-gcc-14.1.0
+../configure --prefix=/ford1/share/gmao_SIteam/gcc/gcc-14.1.0 \
+       --enable-languages=c,c++,fortran --disable-multilib |& tee configure.log
 
-   make -j 6 |& tee make.log
-   make install |& tee makeinstall.log
+make -j 6 |& tee make.log
+make install |& tee makeinstall.log
 
 --]]
 
