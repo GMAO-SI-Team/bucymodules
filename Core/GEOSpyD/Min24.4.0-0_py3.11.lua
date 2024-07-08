@@ -8,7 +8,7 @@ and I ran
    
    ml comp/gcc/12.1.0
 
-  ./install_miniconda.bash --python_version 3.11 --miniconda_version 24.4.0-0 --micromamba --prefix /ford1/share/gmao_SIteam/GEOSpyD |& tee install.mini24.4.0-0_2024-06-11.log
+  ./install_miniconda.bash --python_version 3.11 --miniconda_version 24.4.0-0 --micromamba --prefix /ford1/share/gmao_SIteam/GEOSpyD |& tee install.mini24.4.0-0_2024-06-12.log
 
 NOTE: You'll need to set the date below!
 --]]
@@ -20,7 +20,7 @@ local installdir = "/ford1/share/gmao_SIteam/GEOSpyD"
 local miniconda_version = "24.4.0-0"
 local python_version = "3.11"
 local geospyd_version = miniconda_version .. "_py" .. python_version
-local builddate = "2024-06-11"
+local builddate = "2024-06-12"
 
 local pathdir = pathJoin(geospyd_version,builddate)
 local pkgdir = pathJoin(installdir,pathdir)
