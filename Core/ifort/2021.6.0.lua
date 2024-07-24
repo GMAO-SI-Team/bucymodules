@@ -5,9 +5,9 @@
 family("Compiler")
 
 local compilername = "ifort"
-local version = "2021.6.0"
+local version = "2022.1.0"
 local oneapidir = "/ford1/local/intel/oneapi"
-local compilerdir = pathJoin(oneapidir,"compiler",version,linux)
+local compilerdir = pathJoin(oneapidir,"compiler",version,"linux")
 local mkldir = pathJoin(oneapidir,"mkl",version)
 
 -- Setup Modulepath for packages built by this compiler

@@ -1,4 +1,4 @@
---[[ lmod for llvm-flang built on 2024-05-06
+--[[ lmod for llvm-flang built on 2024-07-12
 
   First go to:
  
@@ -20,14 +20,20 @@
 family("Compiler")
 
 local compilername = "llvm-flang"
-local version = "2024-05-06"
+local version = "2024-07-12"
 local siteamdir = "/ford1/share/gmao_SIteam"
 local installdir = pathJoin(siteamdir,compilername,version)
 
 -- Setup Modulepath for packages built by this compiler
 local mroot = "/ford1/share/gmao_SIteam/lmodulefiles"
-local mdir  = pathJoin(mroot,"Compiler/llvm-flang-2024-05-06")
+local mdir  = pathJoin(mroot,"Compiler/llvm-flang-2024-07-12")
 prepend_path("MODULEPATH", mdir)
+
+-- We also need a backing gcc compiler
+local gccdir = '/ford1/local/gcc/gcc-12.1.0'
+prepend_path("PATH",pathJoin(gccdir,"bin"))
+prepend_path("LD_LIBRARY_PATH",pathJoin(gccdir,"lib64"))
+prepend_path("CPATH",pathJoin(gccdir,"include"))
 
 prepend_path("PATH",pathJoin(installdir,"bin"))
 prepend_path("LD_LIBRARY_PATH",pathJoin(installdir,"lib"))
