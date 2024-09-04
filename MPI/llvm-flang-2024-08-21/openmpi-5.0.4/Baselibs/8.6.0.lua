@@ -6,18 +6,18 @@ This was cloned with:
 
 This was built using:
 
-  ml llvm-flang/2024-07-12 openmpi/5.0.2 GEOSpyD/Min24.4.0-0_py3.11
+  ml llvm-flang/2024-08-21 openmpi/5.0.4 GEOSpyD/Min24.4.0-0_py3.11
 
-  make -j6 install ESMF_COMM=openmpi CONFIG_SETUP='flang_2024-07-12-openmpi_5.0.2' |& tee makeinstall.flang_2024-07-12-openmpi_5.0.2.log
+  make -j6 install ESMF_COMM=openmpi CONFIG_SETUP='flang_2024-08-21-openmpi_5.0.4' |& tee makeinstall.flang_2024-08-21-openmpi_5.0.4.log
 
 --]]
 
 family("Baselibs")
 
-local compilername = "llvm-flang-2024-07-12"
-local mpiname = "openmpi-5.0.2"
+local compilername = "llvm-flang-2024-08-21"
+local mpiname = "openmpi-5.0.4"
 
-local configsetup = "flang_2024-07-12-openmpi_5.0.2"
+local configsetup = "flang_2024-08-21-openmpi_5.0.4"
 
 local version = myModuleVersion()
 local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ESMA-Baselibs-" .. version
