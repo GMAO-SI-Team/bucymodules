@@ -2,32 +2,32 @@
 
 Built with:
 
-module load llvm-flang/2024-07-12
+module load llvm-flang/2024-09-06
 
-mkdir build-llvm-flang-2024-07-12 && cd build-llvm-flang-2024-07-12
+mkdir build-llvm-flang-2024-09-06 && cd build-llvm-flang-2024-09-06
 ../configure --disable-wrapper-rpath --disable-wrapper-runpath \
     CC=clang CXX=clang++ FC=flang-new \
     --with-pmix=internal --with-hwloc=internal --with-libevent=internal \
-    --prefix=/ford1/share/gmao_SIteam/MPI/openmpi/5.0.2/llvm-flang-2024-07-12 |& tee configure.llvm-flang-2024-07-12.log
+    --prefix=/ford1/share/gmao_SIteam/MPI/openmpi/5.0.4/llvm-flang-2024-09-06 |& tee configure.llvm-flang-2024-09-06.log
 
-mv config.log config.llvm-flang-2024-07-12.log
-make -j4 |& tee make.llvm-flang-2024-07-12.log
-make install |& tee makeinstall.llvm-flang-2024-07-12.log
-make check |& tee makecheck.llvm-flang-2024-07-12.log
+mv config.log config.llvm-flang-2024-09-06.log
+make -j4 |& tee make.llvm-flang-2024-09-06.log
+make install |& tee makeinstall.llvm-flang-2024-09-06.log
+make check |& tee makecheck.llvm-flang-2024-09-06.log
 
 --]]
 
 family("MPI")
-prereq("llvm-flang/2024-07-12")
+prereq("llvm-flang/2024-09-06")
 
-local compilername = "llvm-flang-2024-07-12"
-local version = "5.0.2"
+local compilername = "llvm-flang-2024-09-06"
+local version = "5.0.4"
 local siteamdir = "/ford1/share/gmao_SIteam"
 local pkgdir = pathJoin(siteamdir,"MPI","openmpi",version,compilername)
 
 -- Setup Modulepath for packages built by this MPI stack
 local mroot = "/ford1/share/gmao_SIteam/lmodulefiles"
-local mdir = pathJoin(mroot,"MPI/llvm-flang-2024-07-12",("openmpi-"..version))
+local mdir = pathJoin(mroot,"MPI/llvm-flang-2024-09-06",("openmpi-"..version))
 prepend_path("MODULEPATH", mdir)
 
 setenv("OPENMPI",pkgdir)
