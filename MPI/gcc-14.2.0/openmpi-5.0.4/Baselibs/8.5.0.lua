@@ -6,7 +6,7 @@ git clone -j 4 --recurse-submodules -b v8.5.0 https://github.com/GEOS-ESM/ESMA-B
 
 This was built using:
 
-ml gcc/14.2.0 openmpi/5.0.4 GEOSpyD/Min24.4.0-0_py3.11
+ml gcc/14.2.0 openmpi/5.0.4 GEOSpyD/24.7.1-0/3.11
 
 make -j6 install ESMF_COMM=openmpi CONFIG_SETUP='gfortran_14.2.0-openmpi_5.0.4' |& tee makeinstall.gfortran_14.2.0-openmpi_5.0.4.log
 
