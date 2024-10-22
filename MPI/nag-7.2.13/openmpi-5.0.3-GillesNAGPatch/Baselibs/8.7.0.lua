@@ -2,7 +2,7 @@
 
 This was cloned with:
 
-git clone -j 4 --recurse-submodules -b v8.5.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.5.0/src
+git clone -j 4 --recurse-submodules -b v8.7.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.7.0/src
 
 This was built using:
 
