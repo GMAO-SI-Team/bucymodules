@@ -6,7 +6,7 @@ git clone -j 4 --recurse-submodules -b v8.5.0 https://github.com/GEOS-ESM/ESMA-B
 
 This was built using:
 
-ml ifort/2021.13.0 intelmpi/2021.13 GEOSpyD/Min24.4.0-0_py3.11
+ml ifort/2021.13.0 intelmpi/2021.13 GEOSpyD/24.7.1-0/3.11
 
 make -j6 install ESMF_COMM=intelmpi CONFIG_SETUP='ifort_2021.13.0-intelmpi_2021.13' |& tee makeinstall.ifort_2021.13.0-intelmpi_2021.13.log
 
