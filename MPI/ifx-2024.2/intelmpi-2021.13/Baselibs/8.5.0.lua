@@ -6,7 +6,7 @@ This was cloned with:
 
 This was built using:
 
-  ml ifx/2024.2 intelmpi/2021.13 GEOSpyD/Min24.4.0-0_py3.11
+  ml ifx/2024.2 intelmpi/2021.13 GEOSpyD/24.7.1-0/3.11
 
   make -j6 install ESMF_COMM=intelmpi CONFIG_SETUP='ifx_2024.2-intelmpi_2021.13' |& tee makeinstall.ifx_2024.2-intelmpi_2021.13.log
 
