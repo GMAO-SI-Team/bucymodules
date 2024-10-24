@@ -49,7 +49,7 @@ prepend_path("MODULEPATH", mdir)
 local gccdir = '/ford1/local/gcc/gcc-12.1.0'
 prepend_path("PATH",pathJoin(gccdir,"bin"))
 prepend_path("LD_LIBRARY_PATH",pathJoin(gccdir,"lib64"))
--- Possible fix for OpenMP issue?
+-- Possible fix for OpenMP issue: https://github.com/llvm/llvm-project/issues/113487
 prepend_path("LIBRARY_PATH",pathJoin(gccdir,"lib64"))
 prepend_path("CPATH",pathJoin(gccdir,"include"))
 
