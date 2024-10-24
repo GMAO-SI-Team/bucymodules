@@ -49,6 +49,8 @@ prepend_path("MODULEPATH", mdir)
 local gccdir = '/ford1/local/gcc/gcc-12.1.0'
 prepend_path("PATH",pathJoin(gccdir,"bin"))
 prepend_path("LD_LIBRARY_PATH",pathJoin(gccdir,"lib64"))
+-- Possible fix for OpenMP issue?
+prepend_path("LIBRARY_PATH",pathJoin(gccdir,"lib64"))
 prepend_path("CPATH",pathJoin(gccdir,"include"))
 
 prepend_path("PATH",pathJoin(installdir,"bin"))
