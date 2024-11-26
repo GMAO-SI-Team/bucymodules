@@ -1,32 +1,43 @@
 --[[ stub routine for ifx 2024.1
 
-  This was installed using the l_BaseKit_p_2024.1.0.596_offline.sh installer.
- 
-  After running `bash l_BaseKit_p_2024.1.0.596_offline.sh` the GUI came up and
-  a custom install was selected. In that I changed the install directory to:
- 
-    /ford1/share/gmao_SIteam/intel/oneapi
- 
-  and selected these as the components:
- 
-    Intel DPC++ Compatability Tool
-    Intel Distribution for GDB
-    Intel oneAPI DPC++ Library
-    Intel oneAPI Threading Building Blocks
-    Intel oneAPI DPC++/C++ Compiler
-    Intel Integrated Performance Primitives
-    Intel oneAPI Math Kernel Library
- 
-  I then installed the l_HPCKit_p_2024.1.0.560_offline.sh installer. With
-  that I again updated the install directory to the same as above:
+NOTENOTENOTE: See below for needed patch!
 
-    /ford1/share/gmao_SIteam/intel/oneapi
- 
-  and selected:
- 
-    Intel MPI Library
-    Intel oneAPI DPC++/C++ Compiler
-    Intel Fortran Compiler and Intel Fortran Compiler Classic
+This was installed using the l_BaseKit_p_2024.1.0.596_offline.sh installer.
+
+After running `bash l_BaseKit_p_2024.1.0.596_offline.sh` the GUI came up and
+a custom install was selected. In that I changed the install directory to:
+
+/ford1/share/gmao_SIteam/intel/oneapi
+
+and selected these as the components:
+
+Intel DPC++ Compatability Tool
+Intel Distribution for GDB
+Intel oneAPI DPC++ Library
+Intel oneAPI Threading Building Blocks
+Intel oneAPI DPC++/C++ Compiler
+Intel Integrated Performance Primitives
+Intel oneAPI Math Kernel Library
+
+I then installed the l_HPCKit_p_2024.1.0.560_offline.sh installer. With
+that I again updated the install directory to the same as above:
+
+/ford1/share/gmao_SIteam/intel/oneapi
+
+and selected:
+
+Intel MPI Library
+Intel oneAPI DPC++/C++ Compiler
+Intel Fortran Compiler and Intel Fortran Compiler Classic
+
+PATCH NEEDED!
+
+Per Dom Heinzeller, the following patch is needed to make the ifx compiler
+work. Without it we can't make static libraries.
+
+You need to run:
+
+patchelf --add-needed libm.so.6 /ford1/share/gmao_SIteam/intel/oneapi/compiler/2024.1/lib/libimf.so
 
 --]]
 
