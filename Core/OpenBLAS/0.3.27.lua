@@ -23,3 +23,5 @@ setenv("BLAS_ROOT",pkgdir)
 setenv("LAPACK_ROOT",pkgdir)
 
 prepend_path{"INCLUDE",pathJoin(pkgdir,"include")}
+prepend_path{"CMAKE_PREFIX_PATH",pathJoin(pkgdir,"lib64/cmake")}
+prepend_path{"PKG_CONFIG_PATH",pathJoin(pkgdir,"lib64/pkgconfig")}
