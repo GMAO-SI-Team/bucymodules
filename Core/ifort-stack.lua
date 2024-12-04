@@ -1,5 +1,5 @@
 load("GEOSenv")
-load("GEOSpyD/24.7.1-0/3.11")
+load("GEOSpyD")
 load("ifort")
 load("intelmpi")
 load("Baselibs")

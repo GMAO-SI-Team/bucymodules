@@ -1,5 +1,6 @@
 load("GEOSenv")
-load("GEOSpyD/24.7.1-0/3.11")
+load("GEOSpyD")
 load("gcc/14")
+load("OpenBLAS")
 load("openmpi")
 load("Baselibs")
