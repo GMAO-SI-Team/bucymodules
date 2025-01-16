@@ -1,4 +1,4 @@
---[[ lmod for llvm-flang built on 2024-09-06
+--[[ lmod for llvm-flang built on 2024-12-12
 
 The build script I use is at:
 
@@ -15,11 +15,16 @@ Then build with:
 cd /ford1/share/gmao_SIteam/build-llvm-flang
 ml gcc/12.1.0
 mkdir -p tmp/
-TMPDIR=tmp ./build-flang-f18.sh --prefix=/ford1/share/gmao_SIteam --add-date |& tee build.2024-09-06.log
+TMPDIR=tmp ./build-flang-f18.sh --prefix=/ford1/share/gmao_SIteam --add-date |& tee build.2024-12-12.log
 
 If/when the build fails, you can rebuild with:
 
-TMPDIR=tmp ./build-flang-f18.sh --prefix=/ford1/share/gmao_SIteam --add-date --rebuild |& tee build.2024-09-06.rebuild.log
+TMPDIR=tmp ./build-flang-f18.sh --prefix=/ford1/share/gmao_SIteam --add-date --rebuild |& tee build.2024-12-12.rebuild.log
+
+Or do:
+
+cd tmp/llvm-build
+ninja -j6 install
 
 NOTE 1: I have to do the rebuild thing because, for some reason, the first build fails on bucy every time. But you just re run the build command 
         and it works. Seems race condition like?
@@ -36,19 +41,21 @@ but this is currently in the build script
 family("Compiler")
 
 local compilername = "llvm-flang"
-local version = "2024-09-06"
+local version = "2024-12-12"
 local siteamdir = "/ford1/share/gmao_SIteam"
 local installdir = pathJoin(siteamdir,compilername,version)
 
 -- Setup Modulepath for packages built by this compiler
 local mroot = "/ford1/share/gmao_SIteam/lmodulefiles"
-local mdir  = pathJoin(mroot,"Compiler/llvm-flang-2024-09-06")
+local mdir  = pathJoin(mroot,"Compiler/llvm-flang-2024-12-12")
 prepend_path("MODULEPATH", mdir)
 
 -- We also need a backing gcc compiler
 local gccdir = '/ford1/local/gcc/gcc-12.1.0'
 prepend_path("PATH",pathJoin(gccdir,"bin"))
 prepend_path("LD_LIBRARY_PATH",pathJoin(gccdir,"lib64"))
+-- Possible fix for OpenMP issue: https://github.com/llvm/llvm-project/issues/113487
+prepend_path("LIBRARY_PATH",pathJoin(gccdir,"lib64"))
 prepend_path("CPATH",pathJoin(gccdir,"include"))
 
 prepend_path("PATH",pathJoin(installdir,"bin"))
@@ -59,5 +66,5 @@ prepend_path("MANPATH",pathJoin(installdir,"share/man"))
 
 setenv("CC",pathJoin(installdir,"bin","clang"))
 setenv("CXX",pathJoin(installdir,"bin","clang++"))
-setenv("FC",pathJoin(installdir,"bin","flang-new"))
-setenv("F90",pathJoin(installdir,"bin","flang-new"))
+setenv("FC",pathJoin(installdir,"bin","flang"))
+setenv("F90",pathJoin(installdir,"bin","flang"))

@@ -2,27 +2,28 @@
 
 This was cloned with:
 
-  git clone -j 4 --recurse-submodules -b v8.5.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.5.0/src
+  git clone -j 4 --recurse-submodules -b v8.7.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.7.0/src
 
 I then had a *LOT* of hacks in hdf5 and ESMF. But I got something that worked with mpich
 
 This was built using:
 
-  ml llvm-flang/2024-09-06 mpich/4.2.2 GEOSpyD/24.7.1-0/3.11
+  ml llvm-flang/2024-12-12 mpich/4.2.2 GEOSpyD/24.7.1-0/3.11
 
-  make -j6 install ESMF_COMM=mpich CONFIG_SETUP='flang_2024-09-06-mpich_4.2.2' |& tee makeinstall.flang_2024-09-06-mpich_4.2.2.log
+  make -j6 install ESMF_COMM=mpich CONFIG_SETUP='flang_2024-12-12-mpich_4.2.2-ESMFdevelop' |& tee makeinstall.flang_2024-12-12-mpich_4.2.2-ESMFdevelop.log
 
 --]]
 
 family("Baselibs")
 
-local compilername = "llvm-flang-2024-09-06"
+local compilername = "llvm-flang-2024-12-12"
 local mpiname = "mpich-4.2.2"
 
-local configsetup = "flang_2024-09-06-mpich_4.2.2"
+local configsetup = "flang_2024-12-12-mpich_4.2.2-ESMFdevelop"
 
-local version = myModuleVersion()
-local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ClangTest/ESMA-Baselibs-" .. version .. "-TEST"
+-- local version = myModuleVersion()
+local version = "8.7.0"
+local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ClangTest/ESMA-Baselibs-" .. version
 local pkgdir = pathJoin(baselibdir,"x86_64-pc-linux-gnu",configsetup)
 
 -- Setup Modulepath for packages built by this MPI stack
