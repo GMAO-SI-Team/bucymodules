@@ -36,7 +36,15 @@ work. Without it we can't make static libraries.
 You need to run:
 
 patchelf --add-needed libm.so.6 /ford1/share/gmao_SIteam/intel/oneapi/2025/compiler/2025.0/lib/libimf.so
- 
+
+UPDATE!
+
+I thought I found a new version:
+
+wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/b7f71cf2-8157-4393-abae-8cea815509f7/intel-oneapi-hpc-toolkit-2025.0.1.47_offline.sh
+
+but Intel's installer sees this as an upgrade? Not sure.
+
 --]]
 
 family("Compiler")
