@@ -9,7 +9,7 @@ mkdir build-nag-7.2.13 && cd build-nag-7.2.13
    CC=gcc CXX=g++ FC=nagfor \
    MPICHLIB_FFLAGS='-mismatch -fpp' MPICHLIB_FCFLAGS='-mismatch -fpp' --enable-f08 \
    CFLAGS="-I/ford1/share/gmao_SIteam/nag/7.2.13/lib/NAG_Fortran" \
-   --prefix=/ford1/share/gmao_SIteam/MPI/mpich/4.2.2/nag-7.2.13 |& tee configure.nag-7.2.13.log
+   --prefix=/ford1/share/gmao_SIteam/MPI/mpich/4.3.0/nag-7.2.13 |& tee configure.nag-7.2.13.log
 
 mv config.log config.nag-7.2.13.log
 make -j4 |& tee make.nag-7.2.13.log
@@ -22,7 +22,7 @@ family("MPI")
 prereq("nag/7.2.13")
 
 local compilername = "nag-7.2.13"
-local version = "4.2.2"
+local version = "4.3.0"
 local siteamdir = "/ford1/share/gmao_SIteam"
 local pkgdir = pathJoin(siteamdir,"MPI","mpich",version,compilername)
 
