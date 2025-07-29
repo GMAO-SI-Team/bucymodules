@@ -2,7 +2,6 @@ family("stack")
 
 load("GEOSenv")
 load("GEOSpyD")
-load("nag")
+load("nvhpc")
 load("openmpi")
 load("Baselibs")
-load("OpenBLAS")
