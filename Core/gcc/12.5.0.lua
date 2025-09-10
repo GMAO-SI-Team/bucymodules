@@ -9,7 +9,6 @@ tar -xf gcc-12.5.0.tar.xz
 cd gcc-12.5.0
 ./contrib/download_prerequisites
 
-cd /ford1/share/gmao_SIteam/src
 mkdir build-gcc-12.5.0 && cd build-gcc-12.5.0
 ../configure --prefix=/ford1/share/gmao_SIteam/gcc/gcc-12.5.0 \
        --enable-languages=c,c++,fortran --disable-multilib |& tee configure.log
