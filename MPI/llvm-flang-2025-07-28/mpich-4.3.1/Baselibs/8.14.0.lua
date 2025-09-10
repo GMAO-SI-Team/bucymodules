@@ -42,11 +42,11 @@ family("Baselibs")
 local compilername = "llvm-flang-2025-07-28"
 local mpiname = "mpich-4.3.1"
 
-local configsetup = "flang_2025-07-28-mpich_4.3.1-ESMFdevelop"
+local configsetup = "flang_2025-07-28-mpich_4.3.1"
 
 -- local version = myModuleVersion()
 local version = "8.14.0"
-local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ClangTest/ESMA-Baselibs-" .. version
+local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ESMA-Baselibs-" .. version
 local pkgdir = pathJoin(baselibdir,"x86_64-pc-linux-gnu",configsetup)
 
 -- Setup Modulepath for packages built by this MPI stack

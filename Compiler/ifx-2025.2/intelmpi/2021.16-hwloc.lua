@@ -47,4 +47,4 @@ prepend_path("MANPATH",pathJoin(pkgdir,"share/man"))
 
 prepend_path("PKG_CONFIG_PATH",pathJoin(pkgdir,"lib/pkgconfig"))
 
-setenv("I_MPI_HYDRA_TOPOLIB","ipl2")
+setenv("I_MPI_HYDRA_TOPOLIB","hwloc")

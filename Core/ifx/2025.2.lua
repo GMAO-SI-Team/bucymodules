@@ -1,6 +1,10 @@
 --[[ lua modulefile for ifx 2025.2
 
 NOTENOTENOTE: See below for needed patch!
+
+NOTENOTENOTE: I updated this to oneAPI 2025.2.1 on 2025-Aug-19. That used:
+
+  intel-oneapi-hpc-toolkit-2025.2.1.44_offline.sh
   
 NOTE: It looks like the Base installer is no longer needed!
 
