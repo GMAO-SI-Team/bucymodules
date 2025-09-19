@@ -2,24 +2,22 @@
 
 This was cloned with:
 
-  git clone -j 4 --recurse-submodules -b v8.13.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.13.0/src
+git clone -j 4 --recurse-submodules -b v8.19.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.19.0/src
 
 This was built using:
 
-ml GEOSpyD/24.11.3-0/3.12 nvhpc/25.3 openmpi/4.1.6
+ml GEOSpyD/24.11.3-0/3.12 ifort/2021.13.0 intelmpi/2021.13
 
-make -j6 install ESMF_COMM=openmpi CONFIG_SETUP='nvfortran_25.3-openmpi_4.1.6' SYSTEM_ZLIB=YES |& tee makeinstall.nvfortran_25.3-openmpi_4.1.6.log
-
-NOTE: The SYSTEM_ZLIB above is because of a weird NVHPC issue with zlib in baselibs. It also turns off zlib support in curl
+make -j6 install ESMF_COMM=intelmpi CONFIG_SETUP='ifort_2021.13.0-intelmpi_2021.13' |& tee makeinstall.ifort_2021.13.0-intelmpi_2021.13.log
 
 --]]
 
 family("Baselibs")
 
-local compilername = "nvhpc-25.3"
-local mpiname = "openmpi-4.1.6"
+local compilername = "ifort-2021.13.0"
+local mpiname = "intelmpi-2021.13"
 
-local configsetup = "nvfortran_25.3-openmpi_4.1.6"
+local configsetup = "ifort_2021.13.0-intelmpi_2021.13"
 
 local version = myModuleVersion()
 local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ESMA-Baselibs-" .. version
