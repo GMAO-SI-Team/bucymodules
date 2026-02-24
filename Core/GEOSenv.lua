@@ -1,4 +1,5 @@
 load("git")
+load("git-lfs")
 load("cmake")
 load("mepo")
 load("gh")
