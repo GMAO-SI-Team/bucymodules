@@ -2,25 +2,24 @@
 
 This was cloned with:
 
-git clone -j 4 --recurse-submodules -b v8.20.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.20.0/src
+git clone -j 4 --recurse-submodules -b v8.29.0 https://github.com/GEOS-ESM/ESMA-Baselibs.git ESMA-Baselibs-8.29.0/src
 
 This was built using:
 
-ml GEOSpyD/24.11.3-0/3.12 gcc/15.2.0 openmpi/5.0.4
+ml GEOSpyD/25.3.1-0/3.13 ifx/2025.3 intelmpi/2021.17
 
-make -j6 install ESMF_COMM=openmpi CONFIG_SETUP='gfortran_15.2.0-openmpi_5.0.4-ESMF9b07' |& tee makeinstall.gfortran_15.2.0-openmpi_5.0.4-ESMF9b07.log
+make -j6 install ESMF_COMM=intelmpi CONFIG_SETUP='ifx_2025.3-intelmpi_2021.17' |& tee makeinstall.ifx_2025.3-intelmpi_2021.17.log
 
 --]]
 
 family("Baselibs")
 
-local compilername = "gcc-15.2.0"
-local mpiname = "openmpi-5.0.4"
+local compilername = "ifx-2025.3"
+local mpiname = "intelmpi-2021.17"
 
-local configsetup = "gfortran_15.2.0-openmpi_5.0.4-ESMF9b07"
+local configsetup = "ifx_2025.3-intelmpi_2021.17"
 
---local version = myModuleVersion()
-local version = "8.20.0"
+local version = myModuleVersion()
 local baselibdir = "/ford1/share/gmao_SIteam/Baselibs/ESMA-Baselibs-" .. version
 local pkgdir = pathJoin(baselibdir,"x86_64-pc-linux-gnu",configsetup)
 

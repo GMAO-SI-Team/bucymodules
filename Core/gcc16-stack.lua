@@ -2,7 +2,7 @@ family("stack")
 
 load("GEOSenv")
 load("GEOSpyD")
-load("llvm-flang")
+load("gcc/16")
 load("OpenBLAS")
 load("openmpi")
 load("Baselibs")
