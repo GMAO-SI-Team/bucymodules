@@ -1,15 +1,5 @@
 --[[ Lua modulefile for Intel MPI 2021.17 using Intel oneAPI 2025.3
 
-NOTE NOTE NOTE
-
-You will see I have to set I_MPI_HYDRA_TOPOLIB=hwloc below. It was found on
-bucy (at least?) that the new `ipl2` option does not work. Not sure if this
-is because of the fact that bucy is a virtual machine?
-
-There is also a (hidden?) option of `ipl` but the docs currently say:
-
-NOTE: I_MPI_HYDRA_TOPOLIB=ipl is not supported since Intel(R) MPI 2021.17.
-
 --]]
 
 family("MPI")

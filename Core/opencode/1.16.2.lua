@@ -2,12 +2,12 @@
 
 Go to /ford1/share/gmao_SIteam/opencode and run:
 
-OPENCODE_TARGET=linux-x64 ./install-opencode.sh 1.14.30
+OPENCODE_TARGET=linux-x64 ./install-opencode.sh 1.16.2 /ford1/share/gmao_SIteam/opencode
 
 
 --]]
 
-local version = "1.14.30"
+local version = "1.16.2"
 local installdir = "/ford1/share/gmao_SIteam/opencode"
 
 local pkgdir = pathJoin(installdir,version)
@@ -23,7 +23,7 @@ prepend_path("PATH",pathJoin(pkgdir,"bin"))
 -- if mode() == "load" then
 --     -- Fetch the current value of TMPDIR
 --     local tmpdir = os.getenv("TMPDIR")
--- 
+--
 --     -- Check if it is explicitly set to /tmp or if it is not set (which defaults to /tmp)
 --     if tmpdir == "/tmp" or tmpdir == nil then
 --         LmodWarning("TMPDIR is set to /tmp (or not set at all). Opencode is known to experience issues with this configuration. Please consider setting it to a different directory before running Opencode.")
