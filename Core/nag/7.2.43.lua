@@ -4,18 +4,18 @@
 
   Went to:
     https://monet.nag.co.uk/compiler/r72download/
- 
+
   and copied the URL for the x86 Linux installer.
- 
+
     wget https://monet.nag.co.uk/compiler/r72download/npl6a72na_amd64_7236.tgz
     tar -xf npl6a72na_amd64_7236.tgz
- 
+
     cd NAG_Fortran-amd64/
- 
+
   You run INSTALL.sh and pass in:
- 
+
     /ford1/share/gmao_SIteam/nag/7.2.43/bin
- 
+
   as the path
 
 --]]
@@ -62,3 +62,4 @@ setenv("F90",pathJoin(installdir,"bin","nagfor"))
 
 setenv("NAG_KUSARI_FILE","/ford1/share/gmao_SIteam/nag/nag.key")
 
+-- setenv("FFLAGS", "-Wl=/ford1/local/gcc/gcc-12.1.0/bin/gcc")

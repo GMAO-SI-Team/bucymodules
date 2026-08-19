@@ -13,3 +13,5 @@ load("codee")
 -- some run scripts in GEOS. So just don't
 -- autoload with GEOSenv
 --load("opencode")
+
+setenv("LOCAL_REGRESSION_DATA_DIR","/ford1/share/gmao_SIteam/regression-data")
