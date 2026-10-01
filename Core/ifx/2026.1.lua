@@ -27,7 +27,6 @@ Intel oneAPI Math Kernel Library
 Intel Integrated Performance Primitives
 Intel MPI Library
 Intel oneAPI DPC++ Library
-Intel DPC++ Compatability Tool
 Intel oneAPI Threading Building Blocks
 
 PATCH NEEDED!
